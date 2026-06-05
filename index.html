@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .landing {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      min-height: 100vh; text-align: center;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(79,142,247,.2), transparent),
+                  var(--bg);
+      padding: 2rem;
+    }
+    .landing .badge-pill {
+      background: rgba(79,142,247,.12);
+      color: #93c5fd;
+      border: 1px solid rgba(79,142,247,.25);
+      border-radius: 99px;
+      padding: .35rem 1rem;
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .landing h1 {
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -.05em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #e2e8f0 30%, #4f8ef7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .landing p {
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+    }
+    .cta-row { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .cta-row .btn { padding: .8rem 2rem; font-size: 1rem; border-radius: 10px; }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { background: var(--surface); }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <div class="badge-pill">✦ Student Development Portal</div>
+    <h1>Your Academic<br>Hub, Simplified.</h1>
+    <p>Track your courses, manage your schedule, and stay on top of your academic journey — all in one place.</p>
+    <div class="cta-row">
+      <a href="login.html"    class="btn btn-primary">Sign In</a>
+      <a href="register.html" class="btn btn-outline">Create Account</a>
+    </div>
+  </div>
+</body>
+</html>

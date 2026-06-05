@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · Student Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<div class="dashboard">
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-icon">🎓</div>
+      <span class="logo-text">Student Portal</span>
+    </div>
+
+    <span class="nav-label">Menu</span>
+    <a class="nav-item" data-tab="overview">
+      <span class="icon">⬛</span> Overview
+    </a>
+    <a class="nav-item" data-tab="courses">
+      <span class="icon">📚</span> Courses
+    </a>
+    <a class="nav-item" data-tab="schedule">
+      <span class="icon">📅</span> Schedule
+    </a>
+    <a class="nav-item" data-tab="grades">
+      <span class="icon">📊</span> Grades
+    </a>
+
+    <span class="nav-label">Account</span>
+    <a class="nav-item" data-tab="profile">
+      <span class="icon">👤</span> Profile
+    </a>
+
+    <div class="sidebar-footer">
+      <a href="logout" class="btn btn-danger" style="width:100%; font-size:.85rem; padding:.55rem;">
+        ⏻ &nbsp;Sign Out
+      </a>
+    </div>
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <div class="main-content">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <h1>Dashboard</h1>
+      <div class="user-chip">
+        <div class="avatar js-avatar">--</div>
+        <span class="js-username">student</span>
+      </div>
+    </div>
+
+    <!-- ── TAB: Overview ── -->
+    <div id="overview" class="tab-panel">
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Current GPA</div>
+          <div class="stat-value" style="color:var(--accent);">3.72</div>
+          <div class="stat-sub">Out of 4.00</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Credits Earned</div>
+          <div class="stat-value">86</div>
+          <div class="stat-sub">of 120 required</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Enrolled Courses</div>
+          <div class="stat-value">5</div>
+          <div class="stat-sub">This semester</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Attendance</div>
+          <div class="stat-value" style="color:var(--success);">94%</div>
+          <div class="stat-sub">Above average</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3>📢 Announcements</h3>
+        <div class="info-row">
+          <span class="key">🗓 Mid-term exams</span>
+          <span class="val badge badge-yellow">Oct 14–18</span>
+        </div>
+        <div class="info-row">
+          <span class="key">📝 Project submission deadline</span>
+          <span class="val badge badge-blue">Oct 10</span>
+        </div>
+        <div class="info-row">
+          <span class="key">🎉 Campus Fest</span>
+          <span class="val badge badge-green">Oct 22</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── TAB: Courses ── -->
+    <div id="courses" class="tab-panel" style="display:none;">
+      <div class="section-card">
+        <h3>📚 Enrolled Courses</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Code</th><th>Subject</th><th>Credits</th><th>Instructor</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-family:var(--mono);font-size:.82rem;">CS301</td>
+              <td>Data Structures &amp; Algorithms</td>
+              <td>4</td>
+              <td>Dr. Mehta</td>
+              <td><span class="badge badge-green">Active</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--mono);font-size:.82rem;">CS302</td>
+              <td>Operating Systems</td>
+              <td>4</td>
+              <td>Prof. Sharma</td>
+              <td><span class="badge badge-green">Active</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--mono);font-size:.82rem;">CS303</td>
+              <td>Database Management</td>
+              <td>3</td>
+              <td>Dr. Singh</td>
+              <td><span class="badge badge-green">Active</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--mono);font-size:.82rem;">MA201</td>
+              <td>Discrete Mathematics</td>
+              <td>3</td>
+              <td>Prof. Das</td>
+              <td><span class="badge badge-yellow">Midterm</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--mono);font-size:.82rem;">HS101</td>
+              <td>Technical Communication</td>
+              <td>2</td>
+              <td>Ms. Roy</td>
+              <td><span class="badge badge-green">Active</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── TAB: Schedule ── -->
+    <div id="schedule" class="tab-panel" style="display:none;">
+      <div class="section-card">
+        <h3>📅 Weekly Schedule</h3>
+        <table class="table">
+          <thead>
+            <tr><th>Day</th><th>Time</th><th>Subject</th><th>Room</th><th>Type</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Monday</td>    <td>09:00 – 10:30</td><td>Data Structures</td>   <td>LH-4</td><td><span class="badge badge-blue">Lecture</span></td></tr>
+            <tr><td>Monday</td>    <td>11:00 – 12:00</td><td>Discrete Math</td>     <td>LH-2</td><td><span class="badge badge-blue">Lecture</span></td></tr>
+            <tr><td>Tuesday</td>   <td>09:30 – 11:00</td><td>Operating Systems</td> <td>LH-6</td><td><span class="badge badge-blue">Lecture</span></td></tr>
+            <tr><td>Wednesday</td> <td>10:00 – 12:00</td><td>Database Mgmt</td>     <td>Lab-3</td><td><span class="badge badge-purple">Lab</span></td></tr>
+            <tr><td>Thursday</td>  <td>09:00 – 10:30</td><td>Data Structures</td>   <td>Lab-1</td><td><span class="badge badge-purple">Lab</span></td></tr>
+            <tr><td>Friday</td>    <td>11:00 – 12:00</td><td>Tech Communication</td><td>LH-1</td><td><span class="badge badge-blue">Lecture</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── TAB: Grades ── -->
+    <div id="grades" class="tab-panel" style="display:none;">
+      <div class="section-card">
+        <h3>📊 Academic Progress</h3>
+
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Data Structures &amp; Algorithms</span><span>88%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-pct="88" style="width:0"></div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Operating Systems</span><span>76%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-pct="76" style="width:0"></div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Database Management</span><span>91%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-pct="91" style="width:0"></div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Discrete Mathematics</span><span>69%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-pct="69" style="width:0; background: linear-gradient(90deg,#f59e0b,#ef4444);"></div>
+          </div>
+        </div>
+
+        <div class="progress-item">
+          <div class="progress-header">
+            <span>Technical Communication</span><span>95%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-pct="95" style="width:0; background: linear-gradient(90deg,#22c55e,#4ade80);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h3>🏆 Grade Summary</h3>
+        <table class="table">
+          <thead><tr><th>Subject</th><th>Marks</th><th>Grade</th></tr></thead>
+          <tbody>
+            <tr><td>Data Structures</td><td>88/100</td><td><span class="badge badge-blue">A</span></td></tr>
+            <tr><td>Operating Systems</td><td>76/100</td><td><span class="badge badge-purple">B+</span></td></tr>
+            <tr><td>Database Mgmt</td><td>91/100</td><td><span class="badge badge-green">A+</span></td></tr>
+            <tr><td>Discrete Mathematics</td><td>69/100</td><td><span class="badge badge-yellow">B</span></td></tr>
+            <tr><td>Tech Communication</td><td>95/100</td><td><span class="badge badge-green">A+</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── TAB: Profile ── -->
+    <div id="profile" class="tab-panel" style="display:none;">
+      <div class="section-card" style="max-width:520px;">
+        <h3>👤 Your Profile</h3>
+        <div style="text-align:center; margin-bottom:1.5rem;">
+          <div class="avatar" style="width:64px;height:64px;font-size:1.4rem;margin:0 auto .8rem;" id="profile-avatar">--</div>
+          <div style="font-size:1rem;font-weight:600;" id="profile-name">—</div>
+          <div style="font-size:.82rem;color:var(--muted);">Student</div>
+        </div>
+        <div class="info-row">
+          <span class="key">Username</span>
+          <span class="val js-username">—</span>
+        </div>
+        <div class="info-row">
+          <span class="key">Account Status</span>
+          <span class="val"><span class="badge badge-green">Active</span></span>
+        </div>
+        <div class="info-row">
+          <span class="key">Session</span>
+          <span class="val" id="session-time">—</span>
+        </div>
+        <div style="margin-top:1.2rem;">
+          <a href="logout" class="btn btn-danger">Sign Out</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-content -->
+</div><!-- /dashboard -->
+
+<script src="main.js"></script>
+<script>
+  // Extra profile wiring after main.js runs
+  document.addEventListener('DOMContentLoaded', () => {
+    const username = new URLSearchParams(window.location.search).get('user') || 'student';
+    const profileAvatar = document.getElementById('profile-avatar');
+    const profileName   = document.getElementById('profile-name');
+    const sessionTime   = document.getElementById('session-time');
+
+    if (profileAvatar) profileAvatar.textContent = username.slice(0,2).toUpperCase();
+    if (profileName)   profileName.textContent   = username;
+    if (sessionTime)   sessionTime.textContent   = new Date().toLocaleTimeString();
+  });
+</script>
+</body>
+</html>
